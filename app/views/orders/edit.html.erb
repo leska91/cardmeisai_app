@@ -1,0 +1,26 @@
+<div class="contents">
+  <div class="container">
+    <h3>編集する</h3>
+    <%= form_with(model: @order, local: true) do |form| %>
+    <div class="field">
+      <%= form.label :date, "カード利用日" %>
+      <%= form.date_select :date, {discard_year: true, class:"dateSelect"} %>
+    </div>
+    <div class="field">
+      <%= form.label :amount, "利用額" %>
+      <%= form.text_field	:amount %>
+    </div>
+    <div class="selectBox">
+      <%= form.label :category_id, "カテゴリー" %>
+      <%= form.collection_select(:category_id, Category.all, :id, :name, {}, {class:"orderSelect", id:"order-category"}) %>
+    </div>
+    <div class="field">
+      <%= form.label :memo, "memo" %>
+      <%= form.text_field :memo, placeholder: "memo", class:"memo" %>
+    </div>
+    <div class="actions">
+      <%= form.submit "登録" %>
+    </div>
+    <% end %>
+  </div>
+</div>
