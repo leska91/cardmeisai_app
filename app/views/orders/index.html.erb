@@ -1,0 +1,8 @@
+<div class="contents">
+  <% @orders.each do |order| %>
+    <p><%= order.date %></p>
+    <p><%= order.amount %>円</p>
+    <p><%= order.category_id %></p>
+    <p><%= order.memo %></p>  
+  <% end %>
+</div>
