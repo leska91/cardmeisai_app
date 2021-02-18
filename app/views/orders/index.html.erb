@@ -13,7 +13,7 @@
           <%= link_to '削除', order_path(order.id), method: :delete %>
         </li>
         <li>
-          <%= link_to '編集', "#" %>
+          <%= link_to '編集', edit_order_path(order.id), method: :get %>
         </li>
       </ul>
       </div>

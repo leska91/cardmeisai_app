@@ -22,6 +22,10 @@ class OrdersController < ApplicationController
     redirect_to root_path
   end
 
+  def edit
+    order = Order.find(params[:id])
+  end
+
   private
   def order_params
     params.require(:order).permit(:date, :amount, :category_id, :memo)
