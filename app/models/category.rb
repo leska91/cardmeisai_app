@@ -9,7 +9,7 @@ class Category < ActiveHash::Base
     { id: 7, name: '医療費' },
     { id: 8, name: '交通費' },
     { id: 9, name: '服飾費' },
-    { id: 10, name: '美容費' }
+    { id: 10, name: '美容費' },
     { id: 11, name: 'その他' }
   ]
 
