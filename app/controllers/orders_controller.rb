@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+
   def index
     @orders = Order.all
   end
@@ -24,6 +25,12 @@ class OrdersController < ApplicationController
 
   def edit
     @order = Order.find(params[:id])
+  end
+
+  def update
+    order = Order.find(params[:id])
+    order.update(order_params)
+    redirect_to root_path
   end
 
   private
