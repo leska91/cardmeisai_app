@@ -6,6 +6,16 @@
     <p><%= order.date %></p>
     <p><%= order.amount %>円</p>
     <p><%= order.category_id %></p>
-    <p><%= order.memo %></p>  
+    <p><%= order.memo %></p>
+    <div class="more">
+      <ul class="more_list">
+        <li>
+          <%= link_to '削除', order_path(order.id), method: :delete %>
+        </li>
+        <li>
+          <%= link_to '編集', "#" %>
+        </li>
+      </ul>
+      </div>
   <% end %>
 </div>

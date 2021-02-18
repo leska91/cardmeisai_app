@@ -16,6 +16,12 @@ class OrdersController < ApplicationController
     end
   end
 
+  def destroy
+    order = Order.find(params[:id])
+    order.destroy
+    redirect_to root_path
+  end
+
   private
   def order_params
     params.require(:order).permit(:date, :amount, :category_id, :memo)
