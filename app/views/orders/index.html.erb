@@ -1,7 +1,4 @@
 <div class="contents">
-  <%= link_to(new_order_path, class: 'order-btn') do %>
-    <span class='order-text'>記録する</span>
-  <% end %>
   <% @orders.each do |order| %>
     <p><%= order.date %></p>
     <p><%= order.amount %>円</p>

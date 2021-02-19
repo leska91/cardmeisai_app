@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+  before_action :move_to_index, except: [:index]
 
   def index
     @orders = Order.all
@@ -36,6 +37,12 @@ class OrdersController < ApplicationController
   private
   def order_params
     params.require(:order).permit(:date, :amount, :category_id, :memo)
+  end
+
+  def move_to_index
+    unless user_signed_in?
+      redirect_to action: :index
+    end
   end
   
 end
