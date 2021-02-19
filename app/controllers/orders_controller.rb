@@ -2,7 +2,7 @@ class OrdersController < ApplicationController
   before_action :move_to_index, except: [:index]
 
   def index
-    @orders = Order.all
+    @orders = Order.includes(:user)
   end
 
   def new
@@ -36,7 +36,7 @@ class OrdersController < ApplicationController
 
   private
   def order_params
-    params.require(:order).permit(:date, :amount, :category_id, :memo)
+    params.require(:order).permit(:date, :amount, :category_id, :memo).merge(user_id: current_user.id)
   end
 
   def move_to_index
@@ -44,5 +44,4 @@ class OrdersController < ApplicationController
       redirect_to action: :index
     end
   end
-  
 end
