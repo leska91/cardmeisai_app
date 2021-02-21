@@ -1,5 +1,6 @@
 <div class="contents">
   <% if user_signed_in? %>
+    <% amountTotal = 0 %>
     <% @orders.each do |order| %>
       <% if current_user.id == order.user_id %>
         <p><%= order.date %></p>
@@ -16,8 +17,10 @@
             </li>
           </ul>
         </div>
+        <% amountTotal += order.amount  %>
       <% else %>
       <% end %>
     <% end %>
+    <div class="sumPrice"><%= "合計#{amountTotal}円" %></div>
   <% end %>
 </div>
