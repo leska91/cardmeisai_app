@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
   before_action :move_to_index, except: [:index]
+  before_action :set_item, only: [:edit, :update, :destroy]
 
   def index
     @orders = Order.order('created_at DESC').includes(:user)
@@ -19,29 +20,33 @@ class OrdersController < ApplicationController
   end
 
   def destroy
-    order = Order.find(params[:id])
-    order.destroy
+    @order.destroy
     redirect_to root_path
   end
 
   def edit
-    @order = Order.find(params[:id])
+    redirect_to action: :index unless current_user.id == @order.user_id
   end
 
   def update
-    order = Order.find(params[:id])
-    order.update(order_params)
-    redirect_to root_path
+    if @order.update(order_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
   end
 
   private
+
   def order_params
     params.require(:order).permit(:date, :amount, :category_id, :memo).merge(user_id: current_user.id)
   end
 
   def move_to_index
-    unless user_signed_in?
-      redirect_to action: :index
-    end
+    redirect_to action: :index unless user_signed_in?
+  end
+
+  def set_item
+    @order = Order.find(params[:id])
   end
 end
