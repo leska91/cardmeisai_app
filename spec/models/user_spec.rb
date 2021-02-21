@@ -11,6 +11,22 @@ RSpec.describe User, type: :model do
       it '情報を正しく入力すると登録できる' do
         expect(@user).to be_valid
       end
+      it 'nicknameが漢字で登録できる' do
+        @user.nickname = '内田'
+        expect(@user).to be_valid
+      end
+      it 'nicknameがカタカナで登録できる' do
+        @user.nickname = 'ウチダ'
+        expect(@user).to be_valid
+      end
+      it 'nicknameがひらがなで登録できる' do
+        @user.nickname = 'うちだ'
+        expect(@user).to be_valid
+      end
+      it 'nicknameが英数字で登録できる' do
+        @user.nickname = 'uchida1'
+        expect(@user).to be_valid
+      end
     end
 
     context '新規登録できないとき' do
@@ -18,6 +34,11 @@ RSpec.describe User, type: :model do
         @user.nickname = ''
         @user.valid?
         expect(@user.errors.full_messages).to include("Nickname can't be blank")
+      end
+      it 'nicknameが10文字以上だと登録できない' do
+        @user.nickname = 'mayumayu1101'
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Nickname is too long (maximum is 10 characters)")
       end
       it 'emailが空では登録できない' do
         @user.email = ''
