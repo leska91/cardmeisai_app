@@ -2,7 +2,7 @@ class OrdersController < ApplicationController
   before_action :move_to_index, except: [:index]
 
   def index
-    @orders = Order.includes(:user)
+    @orders = Order.order('created_at DESC').includes(:user)
   end
 
   def new
