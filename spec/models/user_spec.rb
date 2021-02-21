@@ -38,7 +38,7 @@ RSpec.describe User, type: :model do
       it 'nicknameが10文字以上だと登録できない' do
         @user.nickname = 'mayumayu1101'
         @user.valid?
-        expect(@user.errors.full_messages).to include("Nickname is too long (maximum is 10 characters)")
+        expect(@user.errors.full_messages).to include('Nickname is too long (maximum is 10 characters)')
       end
       it 'emailが空では登録できない' do
         @user.email = ''

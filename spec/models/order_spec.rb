@@ -31,12 +31,12 @@ RSpec.describe Order, type: :model do
       it 'カテゴリーが空だと登録ができない' do
         @order.category_id = ''
         @order.valid?
-        expect(@order.errors.full_messages).to include("Category is not a number")
+        expect(@order.errors.full_messages).to include('Category is not a number')
       end
       it 'カテゴリーidが１だと登録ができない' do
         @order.category_id = 1
         @order.valid?
-        expect(@order.errors.full_messages).to include("Category must be other than 1")
+        expect(@order.errors.full_messages).to include('Category must be other than 1')
       end
       it '利用額の値が空だと登録ができない' do
         @order.amount = ''
@@ -46,27 +46,27 @@ RSpec.describe Order, type: :model do
       it '利用額の値が¥0であれば登録できない' do
         @order.amount = 0
         @order.valid?
-        expect(@order.errors.full_messages).to include("Amount out of setting range")
+        expect(@order.errors.full_messages).to include('Amount out of setting range')
       end
       it '利用額の値が￥10,000,000以上の場合は登録できない' do
         @order.amount = 10_000_000
         @order.valid?
-        expect(@order.errors.full_messages).to include("Amount out of setting range")
+        expect(@order.errors.full_messages).to include('Amount out of setting range')
       end
       it '利用額の値が半角数字でない場合は登録ができない_全角数字の場合' do
         @order.amount = '３０００'
         @order.valid?
-        expect(@order.errors.full_messages).to include("Amount out of setting range")
+        expect(@order.errors.full_messages).to include('Amount out of setting range')
       end
       it '利用額が英数混合入力されても登録できない' do
         @order.amount = 'a5a5a5'
         @order.valid?
-        expect(@order.errors.full_messages).to include("Amount out of setting range")
+        expect(@order.errors.full_messages).to include('Amount out of setting range')
       end
       it '利用額が半角英語では登録できない' do
         @order.amount = 'ababab'
         @order.valid?
-        expect(@order.errors.full_messages).to include("Amount out of setting range")
+        expect(@order.errors.full_messages).to include('Amount out of setting range')
       end
     end
   end
