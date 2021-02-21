@@ -25,7 +25,7 @@ class OrdersController < ApplicationController
   end
 
   def edit
-    redirect_to action: :index unless (current_user.id == @order.user_id)
+    redirect_to action: :index unless current_user.id == @order.user_id
   end
 
   def update
@@ -35,18 +35,17 @@ class OrdersController < ApplicationController
       render :edit
     end
   end
-  
+
   private
+
   def order_params
     params.require(:order).permit(:date, :amount, :category_id, :memo).merge(user_id: current_user.id)
   end
-  
+
   def move_to_index
-    unless user_signed_in?
-      redirect_to action: :index
-    end
+    redirect_to action: :index unless user_signed_in?
   end
-  
+
   def set_item
     @order = Order.find(params[:id])
   end
