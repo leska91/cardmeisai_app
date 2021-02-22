@@ -1,0 +1,44 @@
+/* ログイン画面 */
+.field {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.container {
+  text-align: center;
+}
+
+.labelName {
+  width: 150px;
+  margin-right: 10px;
+  text-align: left;
+}
+
+#user_remember_me {
+  margin-top: 5.5px;
+}
+
+.actions {
+  margin-top: 50px;
+}
+
+.loginBtn {
+  border-color: olive;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: bisque;
+}
+
+/* 新規登録画面 */
+.signupBtn {
+  border-color: olive;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: bisque;
+}
+
+#user_password_confirmation {
+  height: 28px;
+  margin-top: 10px;
+}

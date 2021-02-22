@@ -1,0 +1,71 @@
+.contents {
+  height: 1000px;
+  width: 700px;
+  margin: 0 auto;
+}
+
+.orderContentsTop {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid gainsboro;
+  margin-top: 10px;
+}
+
+.orderContents {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid gainsboro;
+}
+
+.orderInfo {
+  display: flex;
+  align-items: center;
+}
+
+.orderDate {
+  width: 150px;
+  text-align: center;
+}
+
+.orderAmountList {
+  width: 150px;
+  text-align: center;
+}
+
+.orderAmount {
+  width: 150px;
+  text-align: right;
+}
+
+.orderCategory {
+  width: 120px;
+  text-align: center;
+}
+
+.orderMemo {
+  width: 170px;
+  text-align: center;
+}
+
+.more_list {
+  display: flex;
+  width: 110px;
+  justify-content: space-around;
+}
+
+.sumPrice {
+  text-align: center;
+  margin-top: 10px;
+}
+
+h3 {
+  height: 40px;
+  margin: 0 auto;
+  padding-top: 8px;
+  background-color: blanchedalmond;
+}
+
+a {
+  text-decoration: none;
+  color: dimgray;
+}

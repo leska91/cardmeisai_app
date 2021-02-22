@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+}
+
+.header {
+  height: 50px;
+  width: 700px;
+  margin: 0 auto;
+  background-color: bisque;
+}
+
+.headerBar {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.appNav {
+  margin-left: 10px;
+}
+
+.userNav {
+  height: 80%;
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.postLeft, .postRight, .appName {
+  display: block;
+  padding: 5px 15px;
+}
+
+.postLeft, .postRight {
+  border: 1px solid olive;
+  border-radius: 5px;
+}
