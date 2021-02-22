@@ -3,9 +3,10 @@
 }
 
 .header {
-  background-color: aquamarine;
   height: 50px;
   width: 700px;
+  margin: 0 auto;
+  background-color: bisque;
 }
 
 .headerBar {
@@ -16,16 +17,24 @@
   align-items: center;
 }
 
-.user_nav {
+.appNav {
+  margin-left: 10px;
+}
+
+.userNav {
   height: 80%;
   width: 40%;
-  background-color: bisque;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.postLeft {
-  background-color: bisque;
+.postLeft, .postRight, .appName {
+  display: block;
+  padding: 5px 15px;
 }
 
-.postRight {
-  background-color: bisque;
+.postLeft, .postRight {
+  border: 1px solid olive;
+  border-radius: 5px;
 }

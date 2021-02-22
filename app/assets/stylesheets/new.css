@@ -1,0 +1,10 @@
+.labelTitle {
+  width: 150px;
+}
+
+.orderBtn {
+  border-color: olive;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: bisque;
+}
