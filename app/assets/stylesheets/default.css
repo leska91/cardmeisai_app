@@ -1,0 +1,31 @@
+* {
+  box-sizing: border-box;
+}
+
+.header {
+  background-color: aquamarine;
+  height: 50px;
+  width: 700px;
+}
+
+.headerBar {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user_nav {
+  height: 80%;
+  width: 40%;
+  background-color: bisque;
+}
+
+.postLeft {
+  background-color: bisque;
+}
+
+.postRight {
+  background-color: bisque;
+}
