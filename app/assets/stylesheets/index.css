@@ -22,7 +22,17 @@
   align-items: center;
 }
 
+.orderInfoList {
+  display: flex;
+  align-items: center; 
+}
+
 .orderDate {
+  width: 150px;
+  text-align: center;
+}
+
+.orderDateList {
   width: 150px;
   text-align: center;
 }
