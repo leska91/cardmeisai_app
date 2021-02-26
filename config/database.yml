@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: cardmeisai_app_production
-  username: cardmeisai_app
-  password: <%= ENV['CARDMEISAI_APP_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
