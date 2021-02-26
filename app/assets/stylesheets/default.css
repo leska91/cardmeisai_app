@@ -2,10 +2,6 @@
   box-sizing: border-box;
 }
 
-li {
-  list-style: none;
-}
-
 .header {
   height: 50px;
   width: 700px;
